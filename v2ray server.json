@@ -1,0 +1,103 @@
+{
+  "log": {
+   "loglevel": "info",
+   "access": "/var/log/v2ray/access.log", 
+   "error": "/var/log/v2ray/error.log"
+  },
+  "inbound": {
+    "port": 8089,                     //填写非443端口
+    "listen":"127.0.0.1",
+    "protocol":"vmess",
+    "settings": {
+      "clients": [
+        {
+          "id": "6fdd86cf-af9b-4b7f-b471-ffcf47ab44d5",          //填写自己的uuid
+          "level": 1,
+          "alterId": 64
+        }
+      ]
+    },
+   "streamSettings": {
+      "network": "ws",
+      "security": "auto",
+      "wsSettings": {
+      "path": "/ray"                                             //填写自己的路径，与客户端对应即可
+      }
+    }
+  },
+  "inboundDetour": [
+    {
+      "tag": "tg-in",
+      "listen": "127.0.0.1",
+      "port": 7000,                                              //填写tg代理端口
+      "protocol": "mtproto",
+      "settings": {
+        "users": [
+          {
+            "secret":"a316f90fab6df9ff092c0fa5c2443d3e"          //mtp代理密钥，可以通过 openssl rand -hex 16 生成
+          }
+        ]
+      }
+    }
+  ],
+  "outbound": {
+    "protocol": "freedom",
+    "settings": {}
+  },
+  "outboundDetour": [
+    {
+      "protocol": "blackhole",
+      "settings": {},
+      "tag": "blocked"
+    },
+    {
+        "tag":"tg-out",
+        "protocol": "mtproto",
+        "settings": {
+        }
+    }
+  ],
+  "routing": {
+    "strategy": "rules",
+    "settings": {
+      "rules": [
+        {
+          "type": "field",
+          "ip": [            
+            "0.0.0.0/8",
+            "10.0.0.0/8",
+            "100.64.0.0/10",
+            "127.0.0.0/8",
+            "169.254.0.0/16",
+            "172.16.0.0/12",
+            "192.0.0.0/24",
+            "192.0.2.0/24",
+            "192.168.0.0/16",
+            "198.18.0.0/15",
+            "198.51.100.0/24",
+            "203.0.113.0/24",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "blocked"
+        },
+        {
+          "type": "field",
+          "inboundTag":[
+            "tg-in"
+          ],
+          "outboundTag": "tg-out"
+        }
+      ]
+    }
+  }
+}
+
+
+
+
+
+ 
+
+          
