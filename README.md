@@ -3,4 +3,8 @@
 
 其中server端配置分with mtproto和without两种，按需求下载
 
+client为服务端配置，配置v2ray-core食用
+
+Nginx配置放在/etc/ngnix/sites-enabled当中
+
 TG交流群：[@NewlearnerGroup](https://t.me/NewlearnerGroup)
