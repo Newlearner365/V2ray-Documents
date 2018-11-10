@@ -34,7 +34,7 @@
       "protocol": "blackhole",
       "settings": {},
       "tag": "blocked"
-    },
+    }
   ],
   "routing": {
     "strategy": "rules",
