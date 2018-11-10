@@ -6,7 +6,7 @@
   },
   "inbound": {
     "port": 8089,                     //填写非443端口
-    "listen":"127.0.0.1",
+    "listen":"0.0.0.0",
     "protocol":"vmess",
     "settings": {
       "clients": [
@@ -28,7 +28,7 @@
   "inboundDetour": [
     {
       "tag": "tg-in",
-      "listen": "127.0.0.1",
+      "listen": "0.0.0.0",
       "port": 7000,                                              //填写tg代理端口
       "protocol": "mtproto",
       "settings": {
