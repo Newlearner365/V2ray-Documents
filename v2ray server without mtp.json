@@ -6,7 +6,7 @@
   },
   "inbound": {
     "port": 8089,                //此处填非443端口
-    "listen":"127.0.0.1",
+    "listen":"0.0.0.0",
     "protocol":"vmess",
     "settings": {
       "clients": [
