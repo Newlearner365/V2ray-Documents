@@ -3,7 +3,7 @@
     "loglevel": "info"
   },
   "inbound": {
-    "port": 1081,                                      //socks监听端口，避免冲突即可
+    "port": 1081,
     "listen": "0.0.0.0",
     "protocol": "socks",
     "settings": {
@@ -19,14 +19,14 @@
     "settings": {
       "vnext": [
         {
-          "address": "sg.newlearner.site",              //填写服务器域名
+          "address": "sg.newlearner.site",
           "port": 443,
           "users": [
             {
-              "id": "6fdd86cf-af9b-4b7f-b471-ffcf47ab44d5",          //填写uuid，level和alterID值与server端对应
+              "id": "6fdd86cf-af9b-4b7f-b471-ffcf47ab44d5",
               "alterId": 64,
               "level": 1,
-              "security": "auto"                        //加密，和server端配置文件相一致
+              "security": "auto"
             }
           ]
         }
@@ -36,12 +36,12 @@
       "network": "ws",
       "security": "tls",
       "tlsSettings": {
-        "serverName": "sg.newlearner.site",             //与ssl证书对应的域名相一致
+        "serverName": "sg.newlearner.site",
         "allowInsecure": true
     },
       "wsSettings": {
         "connectionReuse": true,
-        "path": "/ray"                                  //与server端的配置相一致
+        "path": "/ray"
       }
     },
     "mux": {
@@ -81,7 +81,7 @@
         {
           "type": "field",
           "port": null,
-          "outboundTag": "direct",             //避免内网走代理
+          "outboundTag": "direct",
           "ip": [
             "0.0.0.0/8",
             "10.0.0.0/8",
@@ -102,7 +102,7 @@
           "domain": null
         },
         {
-          "type": "field",                     //国内ip走直连
+          "type": "field",
           "port": null,
           "outboundTag": "direct",
           "ip": null,
@@ -111,7 +111,7 @@
           ]
         },
         {
-          "type": "field",                     //国内知名网站domain走直连
+          "type": "field",
           "port": null,
           "outboundTag": "direct",
           "ip": [
