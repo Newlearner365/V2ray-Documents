@@ -19,11 +19,11 @@
     "settings": {
       "vnext": [
         {
-          "address": "sg.newlearner.site",
+          "address": "my.server",
           "port": 443,
           "users": [
             {
-              "id": "6fdd86cf-af9b-4b7f-b471-ffcf47ab44d5",
+              "id": "your-uuid",
               "alterId": 64,
               "level": 1,
               "security": "auto"
@@ -36,12 +36,12 @@
       "network": "ws",
       "security": "tls",
       "tlsSettings": {
-        "serverName": "sg.newlearner.site",
+        "serverName": "my.server",
         "allowInsecure": true
     },
       "wsSettings": {
         "connectionReuse": true,
-        "path": "/ray"
+        "path": "/path"
       }
     },
     "mux": {
@@ -68,6 +68,7 @@
   ],
   "dns": {
     "servers": [
+      "1.1.1.1",    
       "8.8.8.8",
       "8.8.4.4",
       "localhost"
