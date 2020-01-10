@@ -14,6 +14,13 @@
     },
     "streamSettings": null
   },
+  "inboundDetour": [
+    {
+      "protocol": "http",
+      "port": 1082,
+      "settings": {}
+    }
+  ],
   "outbound": {
     "protocol": "vmess",
     "settings": {
